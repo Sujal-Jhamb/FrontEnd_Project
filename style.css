@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,6 @@ body {
 }
 
 /* Global Tags */
-
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -28,28 +28,60 @@ h6 {
   color: rgb(24, 24, 49);
 }
 
-/* Navigation */
-
+/* Navigation Styles */
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8vw;
+  background-color: #fff;
+  height: 80px;
   position: fixed;
   width: 100%;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1vw 8vw;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
   top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
-nav img {
-  width: 150px;
-  height: 40px;
-  cursor: pointer;
+nav .logo-container {
+  flex: 1; /* Allow logo container to take up remaining space */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.logo {
+  height: 100px; /* Set desired height */
+  width: 100%;  /* Maintain aspect ratio */
+}
+
+nav .logo-container img {
+  width: 200px;
+}
+
 nav .navigation {
   display: flex;
+  align-items: center;
+}
+
+nav .navigation ul {
+  display: flex;
+  list-style: none;
+}
+
+nav .navigation ul li {
+  margin-left: 20px;
+}
+
+nav .navigation ul li a {
+  text-decoration: none;
+  color: rgb(21, 21, 100);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+nav .navigation ul li a:hover {
+  color: #FDC93B;
 }
 
 #menu-btn {
@@ -60,29 +92,6 @@ nav .navigation {
 
 #menu-close {
   display: none;
-}
-
-nav .navigation ul {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-nav .navigation ul li {
-  list-style: none;
-  margin-left: 30px;
-}
-
-nav .navigation ul li a {
-  text-decoration: none;
-  color: rgb(21, 21, 100);
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s ease;   /* changes hover color slowly */
-}
-
-nav .navigation ul li a:hover {
-  color: #FDC93B;
 }
 
 /* Home */
@@ -97,10 +106,9 @@ nav .navigation ul li a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* padding-top: 40px; */
 }
 
-#home h2{
+#home h2 {
   color: #fff;
   font-size: 2.2rem;
   letter-spacing: 1px;
@@ -116,12 +124,6 @@ nav .navigation ul li a:hover {
 #home .btn {
   margin-top: 30px;
 }
-/* Ensure buttons are spaced and clickable */
-#home .btn a, #registration .form a.yellow {
-  display: inline-block;
-  margin: 5px; /* Add margin to space buttons */
-}
-
 
 #home a {
   text-decoration: none;
@@ -154,7 +156,7 @@ nav .navigation ul li a:hover {
   background-color: #fff;
 }
 
-/* features */
+/* Features */
 #features {
   padding: 5vw 8vw 0 8vw;
   text-align: center;
@@ -171,7 +173,6 @@ nav .navigation ul li a:hover {
   background: #F9F9FF;
   text-align: start;
   padding: 20px;
-
 }
 
 #features .fea-box i {
@@ -192,7 +193,7 @@ nav .navigation ul li a:hover {
   color: rgb(70, 70, 87);
 }
 
-/* course */
+/* Course */
 #course {
   padding: 8vw 8vw 8vw 8vw;
   text-align: center;
@@ -203,7 +204,14 @@ nav .navigation ul li a:hover {
   background: #F9F9FF;
   min-height: 100%;
   position: relative;
-  box-sizing: border-box; /* added box-sizing property */
+  box-sizing: border-box; /* Added box-sizing property */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#course .courses:hover {
+  transform: scale(1.05); /* Slightly enlarge the box */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 #course .courses img {
@@ -211,6 +219,11 @@ nav .navigation ul li a:hover {
   height: 60%;
   background-size: cover;
   background-position: center;
+  transition: opacity 0.3s ease;
+}
+
+#course .courses:hover img {
+  opacity: 0.8; /* Slightly reduce image opacity on hover */
 }
 
 #course .course-box {
@@ -222,14 +235,17 @@ nav .navigation ul li a:hover {
 
 #course .courses .details {
   padding: 15px 15px 0 15px;
+  transition: color 0.3s ease;
 }
 
+#course .courses:hover .details {
+  color: #FDC93B; /* Change text color on hover */
+}
 
 #course .courses .details i {
   color: #FDC93B;
   font-size: 0.9rem;
 }
-
 
 #course .courses .cost {
   background-color: rgb(74, 74, 136);
@@ -241,10 +257,16 @@ nav .navigation ul li a:hover {
   border-radius: 50%;
   position: absolute;
   right: 15px;
-  bottom: 100px; 
+  bottom: 100px;
+  transition: background-color 0.3s ease; /* Smooth transition for cost box */
 }
 
-/* registration */
+#course .courses:hover .cost {
+  background-color: #FDC93B; /* Change background color of cost on hover */
+  color: rgb(21, 21, 100); /* Change text color of cost on hover */
+}
+
+/* Registration */
 #registration {
   padding: 6vw 8vw 6vw 8vw;
   background-image: linear-gradient(rgba(99, 112, 168, 0.5), rgba(81, 91, 233, 0.5)), url("images/signup.jpg");
@@ -273,7 +295,6 @@ nav .navigation ul li a:hover {
   position: relative; /* Ensure it's positioned correctly */
   z-index: 1; /* Lower z-index to stay below the nav */
 }
-
 
 #registration .reminder .time .date {
   text-align: center;
@@ -330,7 +351,7 @@ nav .navigation ul li a:hover {
   background-color: #fff;
 }
 
-/* experts */
+/* Experts */
 #experts {
   padding: 8vw 8vw 8vw 8vw;
   text-align: center;
@@ -365,7 +386,7 @@ nav .navigation ul li a:hover {
   cursor: pointer;
 }
 
-/* footer */
+/* Footer */
 footer {
   padding: 8vw;
   background-color: #101C32;
@@ -467,16 +488,7 @@ footer .copyright .pro-links i:hover {
   cursor: pointer;
 }
 
-/* About */
-
-/* Blog */
-
-/* Course_inner */
-
-/* contact */
-
-/* responsive */
-
+/* Responsive Styles */
 @media (max-width: 769px) {
   nav {
     padding: 15px 20px;
@@ -484,15 +496,15 @@ footer .copyright .pro-links i:hover {
 
   nav img {
     height: 60px;
-    width: auto; 
-    padding: 0;  
-    margin: 0;   
+    width: auto;
+    padding: 0;
+    margin: 0;
   }
 
   #menu-btn {
     display: initial;
   }
-  
+
   #menu-close {
     display: initial;
     font-size: 1.6rem;
@@ -567,6 +579,7 @@ footer .copyright .pro-links i:hover {
 }
 
 @media (max-width: 475px) {
+
   #registration {
     display: flex;
     flex-direction: column;
@@ -589,7 +602,14 @@ footer .copyright .pro-links i:hover {
     margin-bottom: 20px;
   }
 
-  #home .btn a, #registration .form a.yellow {
+  #home .btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #home .btn a, 
+  #registration .form a.yellow {
     width: 100%; /* Full width buttons on very small screens */
   }
 
