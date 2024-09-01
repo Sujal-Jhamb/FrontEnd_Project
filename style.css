@@ -116,6 +116,12 @@ nav .navigation ul li a:hover {
 #home .btn {
   margin-top: 30px;
 }
+/* Ensure buttons are spaced and clickable */
+#home .btn a, #registration .form a.yellow {
+  display: inline-block;
+  margin: 5px; /* Add margin to space buttons */
+}
+
 
 #home a {
   text-decoration: none;
@@ -491,7 +497,7 @@ footer .copyright .pro-links i:hover {
   nav .navigation ul {
     position: absolute;
     top: 0;
-    right: -100%;
+    right: -220px;
     width: 220px;
     height: 100vh;
     background: rgba(27, 20, 104, 0.45);
@@ -504,7 +510,7 @@ footer .copyright .pro-links i:hover {
     transition: 0.3s ease;
   }
 
-  nav.navigation ul.active {
+  nav .navigation ul.active {
     right: 0;
   }
 
@@ -516,7 +522,63 @@ footer .copyright .pro-links i:hover {
   nav .navigation ul li a {
     color: #fff;
   }
+
+  #home {
+    padding: 40px;
+  }
+
+  #home p {
+    width: 90%;
+  }
+
+  #features {
+    padding: 8vw 4vw 0 4vw;
+  }
+
+  #course {
+    padding: 8vw 4vw 0 4vw;
+  }
+
+  #registration {
+    margin-top: 8vw;
+    padding: 6vw 4vw 6vw 4vw;
+  }
+
+  #registration .reminder .time {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  #experts {
+    padding: 8vw 8vw 4vw 8vw;
+    text-align: center;
+  }
+
+  footer .copyright .pro-links {
+    margin-top: 15px;
+  }
 }
 
 @media (max-width: 475px) {
+  #registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #registration .reminder .time {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #home .btn a, #registration .form a.yellow {
+    width: 100%; /* Full width buttons on very small screens */
+  }
 }
