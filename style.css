@@ -404,6 +404,9 @@ footer p {
 
 footer .subscribe {
   margin-top: 20px;
+  display: flex;
+  flex-direction: row; /* Stack items vertically */
+  gap: 1px; /* Space between input and button */
 }
 
 footer input {
@@ -417,8 +420,8 @@ footer input {
 
 footer .subscribe a {
   text-decoration: none;
-  font-size: 0.9rem;
-  padding: 12px 15px;
+  font-size: 1rem;
+  padding: 10px 12px;
   background-color: #fff;
   font-weight: 600;
 }
@@ -480,7 +483,10 @@ footer .copyright .pro-links i:hover {
   }
 
   nav img {
-    width: 130px;
+    height: 60px;
+    width: auto; 
+    padding: 0;  
+    margin: 0;   
   }
 
   #menu-btn {
@@ -569,6 +575,11 @@ footer .copyright .pro-links i:hover {
     text-align: center;
   }
 
+  #registration h1, .reminder h1 {
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+    padding: 8px; /* Adjust padding */
+  }
+
   #registration .reminder .time {
     display: flex;
     flex-wrap: wrap;
@@ -580,5 +591,20 @@ footer .copyright .pro-links i:hover {
 
   #home .btn a, #registration .form a.yellow {
     width: 100%; /* Full width buttons on very small screens */
+  }
+
+  footer .subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col .subscribe input {
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  footer .subscribe a {
+    max-width: 110px;
   }
 }
